@@ -1,0 +1,23 @@
+game():
+- Outer most function
+- Loops five times for each round of rock, paper, scissors
+
+computerPlay():
+- An array of three string values: "rock", "paper", "scissors"
+- Should be selected randomly within the function - use a random function from 0 - 2
+- Store the value within a variable
+- Return the variable
+
+playRound(playerSelection, computerSelection)
+- Takes in two inputs - playerSelection and computerSelection for 1 round of rock, paper, scissors
+
+- Returns a string announcing the winner. String should be able to tell if player wins or if player loses. i.e. "You Lose! Paper beats Rock"
+- Function should RETURN the result - not print directly to the console
+- If strings are equal - call a tie
+
+calcResult(playerSelection, computerSelection)
+- Compares the results according to a set of rules:
+	- Paper beats Rock
+	- Rock beats Scissors
+	- Scissors beats paper
+- Returns "You Win!" or "You Lose..."

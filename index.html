@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+    </head>
+
+    <body>
+        <script>
+            function game() {
+                function computerPlay() {
+                    let choices = ["rock", "paper", "scissors"];
+                    let result = pickChoice(choices);
+
+                    return result;
+                }
+
+                function pickChoice(choices) {
+                    pick = choices[Math.floor(Math.random() * 3)];
+                    return pick;
+                }
+
+                function playerPlay() {
+                    let validChoice = false;
+                    while (validChoice == false) {
+                    let choice = prompt("Do you pick rock, paper, or scissors?")
+                        choice = choice.toLowerCase();
+
+                    if (choice === "rock" || choice === "paper" || choice === "scissors") {
+                        validChoice = true;
+                    }
+                    else {
+                        alert("Invalid choice! Please type in rock, paper, or scissors");
+                    }
+                    }
+
+                    return choice;
+                }
+
+
+                for(i = 0; i < 5; i++) {
+                    //Some bullshit in here. Do not bulid functions in here.
+                }
+                
+                let choice = playerPlay();
+                console.log("Game over. Thank you for playing!")
+            }
+        </script>
+    </body>
+</html>

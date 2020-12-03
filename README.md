@@ -1,0 +1,1 @@
+This is a small project that is designed to simulate five rounds of rock, paper, scissors within the command line utilizing Javascript

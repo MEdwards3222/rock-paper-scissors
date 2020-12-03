@@ -6,7 +6,6 @@
 
     <body>
         <script>
-            function game() {
                 function computerPlay() {
                     let choices = ["rock", "paper", "scissors"];
                     let result = pickChoice(choices);
@@ -27,23 +26,73 @@
 
                     if (choice === "rock" || choice === "paper" || choice === "scissors") {
                         validChoice = true;
+                        return choice;
                     }
                     else {
                         alert("Invalid choice! Please type in rock, paper, or scissors");
                     }
                     }
-
-                    return choice;
                 }
 
+                function playRound(playerselection, computerselection) {
 
-                for(i = 0; i < 5; i++) {
-                    //Some bullshit in here. Do not bulid functions in here.
+
+                    if(playerselection == "rock" && computerselection == "scissors") {
+                        let message = "You Win! Rock beats Scissors!";
+                        return message;
+                    }
+                    else if(playerselection == "paper" && computerselection == "rock") {
+                        let message = "You Win! Paper beats Rock!";
+                        return message;
+                    }
+                    else if(playerselection == "scissors" && computerselection == "paper") {
+                        let message = "You Win! Scissors beats Paper!"
+                        return message;
+                    }
+                    else if(playerselection == "rock" && computerselection == "paper") {
+                        let message = "You Lose...Paper beats rock."
+                        return message;
+                    }
+                    else if(playerselection == "paper" && computerselection == "scissors") {
+                        let message = "You Lose...Scissors beats Paper."
+                        return message;
+                    }
+                    else if (playerselection == "scissors" && computerselection == "rock") {
+                        let message = "You Lose...Rock beats Scissors";
+                        return message;
+                    }
+                    else if(playerselection == "paper" && computerselection == "paper") {
+                        let message = "Tie game!";
+                        return message;
+                    }
+                    else if(playerselection == "rock" && computerselection == "rock") {
+                        let message = "Tie game!";
+                        return message;
+                    }
+                    else if(playerselection == "scissors" && computerselection == "scissors") {
+                        let message = "Tie game!";
+                        return message;
+                    }
+                    else {
+                        let message = "Error...something went wrong..."
+                        return message;
+                    }
                 }
                 
-                let choice = playerPlay();
+                function game() {
+                for(i = 0; i < 5; i++) {
+                    playerselection = playerPlay();
+                    computerselection = computerPlay();
+
+                    console.log(`Player: ${playerselection} | Computer: ${computerselection}\n-----------------------------------------------------------`);
+                    console.log(playRound(playerselection, computerselection));
+                }
+                
                 console.log("Game over. Thank you for playing!")
-            }
+                }
+
+                game();
+            
         </script>
     </body>
 </html>
